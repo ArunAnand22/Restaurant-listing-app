@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import { Image } from 'react-bootstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Restop from './Restop';
+import Restreview from './Restreview';
 
 function Viewrest() {
 
@@ -31,7 +32,7 @@ function Viewrest() {
       getRestaurants()
   },[])
 
-  const viewrest = AllRestaurants.find(item=>item.id=urlParams.id)
+  const viewrest = AllRestaurants.find(item=>item.id==urlParams.id)
   console.log(viewrest);
 
   return (
@@ -51,6 +52,7 @@ function Viewrest() {
               <ListGroup.Item><h3>{viewrest.address}</h3></ListGroup.Item>
 
               <ListGroup.Item><Restop operate={viewrest.operating_hours}/></ListGroup.Item>
+              <Restreview review={viewrest.reviews}/>
               </ListGroup>
             </Col>
 

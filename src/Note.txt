@@ -18,3 +18,5 @@ Install react router dom -  npm i react-router-dom
     Routes - For holding all route path tag  
     Router - Holding Routes
 useParams (hook) - Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the route path
+Create a component - Restop - for displaying the opening time
+Create a component - Restreview - for displaying the reviews
