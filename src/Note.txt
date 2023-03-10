@@ -19,4 +19,14 @@ Install react router dom -  npm i react-router-dom
     Router - Holding Routes
 useParams (hook) - Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the route path
 Create a component - Restop - for displaying the opening time
-Create a component - Restreview - for displaying the reviews
+Create a component - Restreview - for displaying the reviews and comments 
+--------------------------------------------------------------------------------------------------
+                REDUX 
+        -To manage state,inorder to avoid props drilling
+
+Install redux library - npm i redux react-redux redux-thunk
+        1.Create a store file - src/store.js ( To hold updated states )
+        2.Create Action - src/actions/restlistAction.js (Logic - To fetch data from an API)
+                (1)To fetch data here we use axios - npm i axios 
+        3.Create constants folder - src/constants/restconstant.js
+        4.Create reducer - src/reducer/restreducer.js  

@@ -1,32 +1,24 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect } from 'react'
 import RestCard from './RestCard'
 import Row from 'react-bootstrap/Row';
+import { RestListAction } from '../actions/restlistAction';
+import { useDispatch,useSelector } from 'react-redux';
 
 function Restlist() {
-
-    //Create a state
-    const [AllRestaurants,setAllRestaurants] = useState([])
-
     //To fetch data
-    const getRestaurants = async()=>{
-        await fetch('./restaurants.json').then((data)=>{
-            data.json().then(
-                (result)=>{
-                    setAllRestaurants(result.restaurants)//[10] values
-                }
-            )
-        })
-    }
-    console.log(AllRestaurants);
+    const dispatch=useDispatch()
+    const result=useSelector(state=>state.restaurantReducer)
+    const {restaurantList}=result;
+    console.log(restaurantList);
 
     useEffect(()=>{
-        getRestaurants()
+        dispatch(RestListAction())
     },[])
 
   return (
     <Row>
         {
-            AllRestaurants.map((item)=>(
+            restaurantList.map((item)=>(
                 <RestCard data={item}/>
             ))
         }
